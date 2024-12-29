@@ -6,7 +6,7 @@ import { RiMoonClearFill } from "react-icons/ri";
 import { useTheme } from "next-themes";
 
 const ThemeToggle: React.FC = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
