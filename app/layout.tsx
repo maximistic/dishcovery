@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { ThemeProvider } from "./context/theme-provider";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "DishCovery",

@@ -40,4 +40,3 @@ This app should allow the users to:
     - React Context API
     - Axios - API calls to the DB
     - Firebase - Authentication
-
