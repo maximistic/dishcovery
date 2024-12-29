@@ -28,7 +28,6 @@ const Navbar: React.FC = () => {
           </NavLink>
         </div>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-10">
           <ul className="flex space-x-8">
             {navItems.map((item) => (
@@ -46,7 +45,6 @@ const Navbar: React.FC = () => {
           <ThemeToggle />
         </div>
 
-        {/* Right Section (Search + Signup) */}
         <div className="flex items-center space-x-4 md:space-x-6">
           <NavLink
             href="/search"
@@ -69,7 +67,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 py-6 border-t border-gray-200 dark:border-gray-700">
           <ul className="space-y-6 text-center">
@@ -84,10 +81,11 @@ const Navbar: React.FC = () => {
                 </NavLink>
               </li>
             ))}
+            <div className="mt-4">
+              <ThemeToggle />
+            </div>
           </ul>
-          <div className="mt-4">
-            <ThemeToggle />
-          </div>
+
         </div>
       )}
     </nav>
