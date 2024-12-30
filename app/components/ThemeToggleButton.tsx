@@ -27,9 +27,9 @@ const ThemeToggle: React.FC = () => {
       aria-label="Toggle Theme"
     >
       {resolvedTheme === "dark" ? (
-        <FaSun className="w-6 h-6 text-yellow-500" />
+        <FaSun className="w-6 h-6 text-gray-200" />
       ) : (
-        <RiMoonClearFill className="w-6 h-6 text-blue-500" />
+        <RiMoonClearFill className="w-5 h-5 text-gray-800" />
       )}
     </button>
   );
