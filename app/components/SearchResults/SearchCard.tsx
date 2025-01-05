@@ -15,8 +15,8 @@ const SearchCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
         src={recipe.image}
         alt={recipe.title}
         className="w-full h-48 object-cover"
-        width={250}
-        height={250}
+        width={240}
+        height={150}
       />
       <div className="p-4">
         <h3 className="text-lg font-bold text-gray-600 dark:text-gray-600">{recipe.title}</h3>
