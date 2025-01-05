@@ -26,14 +26,12 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
         <div className="text-2xl font-bold">
           <NavLink href="/" className="text-orange-600">
             DishCovery
           </NavLink>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center justify-center space-x-10">
           <ul className="flex space-x-8">
             {navItems.map((item) => (
@@ -62,7 +60,6 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
 
-        {/* Search and Sign Up Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           <NavLink
             href="/search"
@@ -72,14 +69,13 @@ const Navbar: React.FC = () => {
           </NavLink>
           <NavLink
             href="/signup"
-            className="bg-orange-600 text-white px-5 py-2 rounded-lg hover:bg-orange-500 transition-colors"
+            className="bg-orange-600 text-white px-5 py-2 rounded-lg hover:bg-orange-500 hover:text-white transition-colors"
           >
             Sign Up
           </NavLink>
           <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div
           className="md:hidden text-gray-800 dark:text-gray-200 cursor-pointer"
           onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -88,7 +84,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <MobileMenu navItems={navItems} isOpen={isMenuOpen} />
     </nav>
   );
