@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "./context/theme-provider";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "DishCovery",
@@ -26,6 +27,7 @@ export default function RootLayout({
 
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
