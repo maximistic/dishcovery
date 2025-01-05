@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getRecipeByQuery } from "./api";
 import SearchCard from "../components/SearchResults/SearchCard";
@@ -9,10 +9,10 @@ interface Recipe {
   id: number;
   title: string;
   image: string;
-  readyInMinutes: number;
+  maxReadyTime: number;
 }
 
-const SearchPage: React.FC = () => {
+const SearchPageContent: React.FC = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -33,7 +33,7 @@ const SearchPage: React.FC = () => {
 
   return (
     <div>
-      <div className="bg-gray-200 py-8">
+      <div className="bg-white dark:bg-gray-900 py-0">
         <Hero />
       </div>
       <div className="container mx-auto px-4 py-8">
@@ -53,6 +53,14 @@ const SearchPage: React.FC = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const SearchPage: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchPageContent />
+    </Suspense>
   );
 };
 
