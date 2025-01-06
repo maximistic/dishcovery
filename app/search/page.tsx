@@ -2,7 +2,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getRecipeByQuery } from "./api";
-import SearchCard from "../components/SearchResults/SearchCard";
+import Recipe from "../components/SearchBody/Recipe";
 import Hero from "../components/SearchHero/Hero";
 
 interface Recipe {
@@ -37,7 +37,7 @@ const SearchPageContent: React.FC = () => {
         <Hero />
       </div>
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">
+        {/* <h1 className="text-3xl font-bold mb-4">
           Search Results for {query || "No query"}
         </h1>
         {loading ? (
@@ -50,7 +50,9 @@ const SearchPageContent: React.FC = () => {
               <SearchCard key={recipe.id} recipe={recipe} />
             ))}
           </div>
-        )}
+        )} */}
+
+        <Recipe />
       </div>
     </div>
   );
