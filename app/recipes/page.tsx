@@ -27,6 +27,7 @@ const RecipesPage = async ({ searchParams }: { searchParams: Promise<SearchParam
   const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?${params}`);
   const data = await res.json();
   const recipes: Recipe[] = data.results || [];
+  console.log("API Key:", process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY);
 
   return (
     <div className="container mx-auto px-4 py-8">
