@@ -1,131 +1,79 @@
-"use client";
-
-import React, { useEffect } from "react";
-import { ReactLenis } from "lenis/react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import * as  React from "react";
 
-gsap.registerPlugin(ScrollTrigger);
 
-const Hero = () => {
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const rows = gsap.utils.toArray<HTMLElement>(".row");
-    rows.forEach((row) => {
-      const cardLeft = row.querySelector<HTMLElement>(".card-left");
-      const cardRight = row.querySelector<HTMLElement>(".card-right");
-
-      if (cardLeft) {
-        gsap.to(cardLeft, {
-          x: -200,
-          opacity: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: row,
-            start: "top 80%",
-            end: "top 30%",
-            scrub: true,
-          },
-        });
-      }
-
-      if (cardRight) {
-        gsap.to(cardRight, {
-          x: 200,
-          opacity: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: row,
-            start: "top 80%",
-            end: "top 30%",
-            scrub: true,
-          },
-        });
-      }
-    });
-
-    gsap.to(".main-content", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".main",
-        start: "top 70%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  }, []);
-
-  const generateRows = () =>
-    Array.from({ length: 3 }).map((_, i) => (
-      <div className="row flex justify-between gap-4 mb-16" key={i}>
-        <div className="card card-left flex-1 opacity-0 transform translate-x-20">
-          <Image
-            src={`/img-${2 * i + 1}.png`}
-            alt={`Image ${2 * i + 1}`}
-            className="w-full h-auto object-cover rounded-2xl"
-            width={500}
-            height={500}
-          />
-        </div>
-        <div className="card card-right flex-1 opacity-0 transform -translate-x-20">
-          <Image
-            src={`/img-${2 * i + 2}.png`}
-            alt={`Image ${2 * i + 2}`}
-            className="w-full h-auto object-cover rounded-2xl"
-            width={500}
-            height={500}
-          />
-        </div>
-      </div>
-    ));
-
+function Hero() {
   return (
-    <ReactLenis
-      root
-      className="w-full h-full font-sans bg-black text-white overflow-x-hidden"
-    >
-      <section className="hero relative flex justify-center items-center h-screen">
-        <div className="img">
-          <Image
-            src="/Logo.png"
-            alt="Main Logo"
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48"
-            width={500}
-            height={500}
-          />
-        </div>
-      </section>
-
-      <section className="main pt-32">
-        <div className="main-content text-center mb-16 opacity-0 translate-y-10  transition-transform duration-300">
-          <div className="copy mb-8 flex flex-col justify-center align-center">
-            <div className="line">
-              <p className="text-2xl font-bold">Explore the Unseen</p>
-            </div>
-            <div className="line">
-              <p className="text-2xl font-bold">Adventure Awaits</p>
-            </div>
-            <div className="line">
-              <p className="text-2xl font-bold">Lets Get Started</p>
-            </div>
-          </div>
-          <div className="btn">
-            <button className="px-8 py-3 bg-gray-200 text-black font-bold rounded-lg hover:scale-105 transition-all">
-              Let&apos;s Dive
+    <section className="bg-beige-100 px-6 py-12 md:py-24 mt-72">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        {/* Left Content */}
+        <div>
+          <span className="bg-yellow-100 text-yellow-700 py-1 px-3 rounded-full text-sm">
+            Welcome to FoodyDots 😊
+          </span>
+          <h1 className="text-4xl font-bold text-gray-800 mt-4">
+            Food you love, <br /> delivered to you
+          </h1>
+          <p className="text-gray-600 mt-4">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet.
+          </p>
+          <div className="flex items-center gap-4 mt-6">
+            <button className="bg-orange-500 text-white py-3 px-6 rounded-lg shadow hover:bg-orange-600 transition">
+              Explore Menu
+            </button>
+            <button className="flex items-center gap-2 text-gray-800">
+              <span className="material-icons">play_circle</span> Watch Video
             </button>
           </div>
+          <div className="flex items-center gap-2 mt-8">
+            <Image
+              src="/images/reviews.jpg"
+              alt="Customer Reviews"
+              className="h-10 w-10 rounded-full object-cover"
+              width={240}
+              height={240}
+            />
+            <p className="text-sm text-gray-600">
+              <span className="font-bold text-gray-800">4.7</span> (12.3k Reviews)
+            </p>
+          </div>
         </div>
 
-        {generateRows()}
-      </section>
-    </ReactLenis>
+        {/* Right Content */}
+        <div className="relative">
+          <Image
+            src="/images/salad.jpg"
+            alt="Salad"
+            className="rounded-lg shadow-lg"
+            width={240}
+            height={240}
+          />
+          {/* Overlays */}
+          <div className="absolute top-4 right-4 bg-white p-3 rounded-lg shadow-lg">
+            <p className="text-sm font-bold text-gray-800">Salad with salmon</p>
+            <p className="text-gray-600 text-sm">$7.50</p>
+          </div>
+          <div className="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-lg">
+            <p className="text-sm font-bold text-gray-800">American burger</p>
+            <p className="text-gray-600 text-sm">$5.70</p>
+          </div>
+          <div className="absolute bottom-8 right-8 bg-white p-3 rounded-lg shadow-lg flex items-center gap-2">
+            <Image
+              src="/images/courier.jpg"
+              alt="Food Courier"
+              className="h-8 w-8 rounded-full object-cover"
+              width={240}
+              height={240}
+            />
+            <p className="text-sm font-bold text-gray-800">Brooklyn Simmons</p>
+            <p className="text-gray-600 text-sm">Food Courier</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
-};
+}
 
 export default Hero;
