@@ -13,7 +13,7 @@ interface SearchParams {
 }
 
 const RecipesPage = async ({ searchParams }: { searchParams: Promise<SearchParams> }) => {
-  const paramsResolved = await searchParams; // Await the resolved searchParams
+  const paramsResolved = await searchParams; 
   const { query, diet, excludeIngredients } = paramsResolved;
 
   const params = new URLSearchParams({
