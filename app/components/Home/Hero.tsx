@@ -4,72 +4,38 @@ import * as  React from "react";
 
 function Hero() {
   return (
-    <section className="bg-beige-100 px-6 py-12 md:py-24 mt-72">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        {/* Left Content */}
+    <section className=" md:py-5 py-10">
+      <div className="max-w-7xl mx-10 md:mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         <div>
-          <span className="bg-yellow-100 text-yellow-700 py-1 px-3 rounded-full text-sm">
-            Welcome to FoodyDots 😊
+          <span className="bg-yellow-300 text-yellow-900 py-2 px-4 rounded-full text-md shadow-md">
+            Welcome to DishCovery 😊
           </span>
-          <h1 className="text-4xl font-bold text-gray-800 mt-4">
-            Food you love, <br /> delivered to you
+          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mt-6 dark:text-white leading-tight">
+            Discover Recipes, <br /> 
+            <span className="text-orange-600">Cook with Joy</span>
           </h1>
-          <p className="text-gray-600 mt-4">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+          <p className="text-gray-700 mt-6 dark:text-gray-300 text-lg leading-relaxed">
+            Find the perfect recipe for every occasion and bring the magic of cooking
+            to your kitchen. Let&apos;s make your culinary journey unforgettable!
           </p>
-          <div className="flex items-center gap-4 mt-6">
-            <button className="bg-orange-500 text-white py-3 px-6 rounded-lg shadow hover:bg-orange-600 transition">
-              Explore Menu
+          <div className="flex items-center gap-4 mt-8">
+            <button className="bg-orange-600 text-white py-3 px-8 rounded-full shadow-lg hover:bg-orange-500 transition">
+              Explore Recipes ➤
             </button>
-            <button className="flex items-center gap-2 text-gray-800">
-              <span className="material-icons">play_circle</span> Watch Video
+            <button className="bg-gray-200 text-gray-800 py-3 px-8 rounded-full shadow hover:bg-gray-300 transition dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">
+              Watch Tutorials 🎥
             </button>
-          </div>
-          <div className="flex items-center gap-2 mt-8">
-            <Image
-              src="/images/reviews.jpg"
-              alt="Customer Reviews"
-              className="h-10 w-10 rounded-full object-cover"
-              width={240}
-              height={240}
-            />
-            <p className="text-sm text-gray-600">
-              <span className="font-bold text-gray-800">4.7</span> (12.3k Reviews)
-            </p>
           </div>
         </div>
 
-        {/* Right Content */}
         <div className="relative">
           <Image
-            src="/images/salad.jpg"
+            src="/foodplate4bg.png"
             alt="Salad"
-            className="rounded-lg shadow-lg"
-            width={240}
-            height={240}
+            className="rounded-none shadow-none"
+            width={400}
+            height={200}
           />
-          {/* Overlays */}
-          <div className="absolute top-4 right-4 bg-white p-3 rounded-lg shadow-lg">
-            <p className="text-sm font-bold text-gray-800">Salad with salmon</p>
-            <p className="text-gray-600 text-sm">$7.50</p>
-          </div>
-          <div className="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-lg">
-            <p className="text-sm font-bold text-gray-800">American burger</p>
-            <p className="text-gray-600 text-sm">$5.70</p>
-          </div>
-          <div className="absolute bottom-8 right-8 bg-white p-3 rounded-lg shadow-lg flex items-center gap-2">
-            <Image
-              src="/images/courier.jpg"
-              alt="Food Courier"
-              className="h-8 w-8 rounded-full object-cover"
-              width={240}
-              height={240}
-            />
-            <p className="text-sm font-bold text-gray-800">Brooklyn Simmons</p>
-            <p className="text-gray-600 text-sm">Food Courier</p>
-          </div>
         </div>
       </div>
     </section>
