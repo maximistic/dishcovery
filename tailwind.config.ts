@@ -12,16 +12,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      // spacing: {
-      //   0: "0",
-      //   1: "0.4rem",
-      //   2: "0.8rem",
-      //   3: "1.2rem",
-      //   4: "1.6rem",
-      //   5: "2.4rem",
-      //   6: "3.2rem",
-      //   7: "4rem",
-      // }
     },
   },
   darkMode: "class",
