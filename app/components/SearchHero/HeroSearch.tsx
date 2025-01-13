@@ -12,11 +12,11 @@ const HeroSearch: React.FC = () => {
     if (searchTerm.trim()) {
       const queryParams = new URLSearchParams({
         query: searchTerm.trim(),
-        ...(diet !== "none" && { diet }), // Include diet if not "none"
+        ...(diet !== "none" && { diet }), 
         ...(excludeIngredients && { excludeIngredients }),
       }).toString();
 
-      router.push(`/recipes?${queryParams}`); // Redirect to recipes page
+      router.push(`/recipes?${queryParams}`); 
     }
   };
 

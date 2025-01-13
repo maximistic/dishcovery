@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
           </NavLink>
           <NavLink
             href="/signup"
-            className="bg-orange-600 text-white px-5 py-2 rounded-lg hover:bg-orange-500 hover:text-white transition-colors"
+            className="bg-orange-600 text-white px-5 py-2 rounded-lg hover:bg-orange-500 dark:text-white transition-colors"
           >
             Sign Up
           </NavLink>
