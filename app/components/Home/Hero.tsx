@@ -1,7 +1,6 @@
 import Image from "next/image";
 import * as  React from "react";
 
-
 function Hero() {
   return (
     <section className=" md:py-5 py-10">

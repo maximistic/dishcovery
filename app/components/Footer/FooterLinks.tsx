@@ -11,8 +11,8 @@ const FooterLinks: React.FC = () => {
 
     return (
         <div>
-            <h3 className='text-lg font-semibold mb-4'>Quick Links</h3>
-            <ul className='space-y-2'>
+            <h3 className='text-lg font-bold mb-4'>Quick Links</h3>
+            <ul className='space-y-2 font-bold'>
                 {NavItems.map((item) => (
                     <li key={item.href}>
                         <NavLink 

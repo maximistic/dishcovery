@@ -43,7 +43,7 @@ export default function Cuisines() {
   }, [selectedCuisine]);
 
   return (
-    <div className="flex flex-col dark:text-white h-screen">
+    <div className="flex flex-col dark:text-white h-screen pb-16">
       <h2 className="text-4xl font-bold mb-6 text-gray-700 dark:text-white text-center">
         We Offer You Different Tastes from Around the Globe
       </h2>
